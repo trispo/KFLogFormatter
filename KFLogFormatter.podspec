@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.screenshots  = "Screenshots/Screenshot-0.png"
   s.license      = 'MIT'
   s.author       = { "Gunnar Herzog" => "gunnar.herzog@kf-interactive.com", "Rico Becker" => "rico.becker@kf-interactive.com" }
-  s.source       = { :git => "https://github.com/trispo/KFLogFormatter", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/trispo/KFLogFormatter.git", :tag => s.version.to_s }
   s.requires_arc = true
   s.source_files = 'Classes'
   s.dependency 'CocoaLumberjack', '~> 1.6'
