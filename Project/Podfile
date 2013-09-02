@@ -1,7 +1,3 @@
-pod "KFLogFormatter", :path => "../"
-
 target "Demo" do
-end
-
-target "DemoTests" do
+    pod "KFLogFormatter", :path => "../"
 end
