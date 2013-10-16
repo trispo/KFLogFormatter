@@ -25,14 +25,9 @@
 
 #import "KFLogFormatter.h"
 
-@interface KFLogFormatter ()
-
-@property (strong) NSDateFormatter *dateFormatter;
-
-@end
-
-
 @implementation KFLogFormatter
+
+static NSDateFormatter *dateFormatter;
 
 - (id)init
 {
@@ -40,8 +35,12 @@
 
     if (self)
     {
-        _dateFormatter = [[NSDateFormatter alloc] init];
-        [_dateFormatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"yMMddHHmmssSSS" options:kNilOptions locale:[NSLocale currentLocale]]];
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^
+        {
+            dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"yMMddHHmmssSSS" options:kNilOptions locale:[NSLocale currentLocale]]];
+        });
     }
 
     return self;
@@ -53,27 +52,27 @@
     switch (logMessage->logFlag)
     {
         case LOG_FLAG_ERROR:
-            logLevel = @"ERROR    ";
+            logLevel = @"ERROR  ";
             break;
 
         case LOG_FLAG_INFO:
-            logLevel = @"INFO     ";
+            logLevel = @"INFO   ";
             break;
             
         case LOG_FLAG_WARN:
-            logLevel = @"WARNING  ";
+            logLevel = @"WARNING";
             break;
 
         case LOG_FLAG_VERBOSE:
-            logLevel = @"VERBOSE  ";
+            logLevel = @"VERBOSE";
             break;
 
         default:
-            logLevel = @"         ";
+            logLevel = @"       ";
             break;
     }
 
-    NSString *dateString = [self.dateFormatter stringFromDate:(logMessage->timestamp)];
+    NSString *dateString = [dateFormatter stringFromDate:(logMessage->timestamp)];
 
     return [NSString stringWithFormat:@"%@ %@ -[%@ %@][Line %d] %@", logLevel, dateString, logMessage.fileName, logMessage.methodName, logMessage->lineNumber, logMessage->logMsg];
 }

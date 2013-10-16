@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KFLogFormatter"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "A log message formatter for CocoaLumberjack."
   s.description  = <<-DESC
                      The KFLogFormatter class provides a log formatter for the CocoaLunmberjack
