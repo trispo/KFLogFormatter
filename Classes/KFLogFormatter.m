@@ -66,6 +66,10 @@ static NSDateFormatter *dateFormatter;
         case LOG_FLAG_VERBOSE:
             logLevel = @"VERBOSE";
             break;
+            
+        case LOG_FLAG_DEBUG:
+            logLevel = @"DEBUG  ";
+            break;
 
         default:
             logLevel = @"       ";
