@@ -27,6 +27,8 @@
 
 @implementation KFLogFormatter
 
+#define kDateFormatter = @"KFDateFormatterKey"
+
 static NSDateFormatter *dateFormatter;
 
 - (id)init
@@ -38,8 +40,14 @@ static NSDateFormatter *dateFormatter;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^
         {
-            dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"yMMddHHmmssSSS" options:kNilOptions locale:[NSLocale currentLocale]]];
+            NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+            dateFormatter = threadDictionary[kDateFormatter];
+            if (dateFormatter == nil)
+            {
+                dateFormatter = [NSDateFormatter new];
+                [dateFormatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"yMMddHHmmssSSS" options:kNilOptions locale:[NSLocale currentLocale]]];
+                threadDictionary[kDateFormatter] = dateFormatter;
+            }
         });
     }
 
@@ -65,6 +73,10 @@ static NSDateFormatter *dateFormatter;
 
         case LOG_FLAG_VERBOSE:
             logLevel = @"VERBOSE";
+            break;
+            
+        case LOG_FLAG_DEBUG:
+            logLevel = @"DEBUG  ";
             break;
 
         default:
