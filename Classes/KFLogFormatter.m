@@ -27,7 +27,7 @@
 
 @implementation KFLogFormatter
 
-#define kDateFormatter = @"KFDateFormatterKey"
+#define kDateFormatter @"KFDateFormatterKey"
 
 static NSDateFormatter *dateFormatter;
 
