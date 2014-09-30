@@ -1,3 +1,4 @@
 target "Demo" do
+	platform :ios, '7.0'
     pod "KFLogFormatter", :path => "../"
 end

@@ -10,29 +10,29 @@
 	<string>Demo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7FAA02BC-1C68-40FF-8F77-A8EBA1F4D269</key>
+		<key>01A3B37EAE0600A89E1C42EB26AF921F4DADD916</key>
 		<string>ssh://github.com/trispo/KFLogFormatter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Project/Demo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7FAA02BC-1C68-40FF-8F77-A8EBA1F4D269</key>
+		<key>01A3B37EAE0600A89E1C42EB26AF921F4DADD916</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/trispo/KFLogFormatter.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7FAA02BC-1C68-40FF-8F77-A8EBA1F4D269</string>
+	<string>01A3B37EAE0600A89E1C42EB26AF921F4DADD916</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7FAA02BC-1C68-40FF-8F77-A8EBA1F4D269</string>
+			<string>01A3B37EAE0600A89E1C42EB26AF921F4DADD916</string>
 			<key>IDESourceControlWCCName</key>
 			<string>KFLogFormatter</string>
 		</dict>

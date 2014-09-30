@@ -1,6 +1,10 @@
 PODS:
-  - CocoaLumberjack (1.6.2)
-  - KFLogFormatter (0.1.0):
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
+  - KFLogFormatter (1.0.0):
     - CocoaLumberjack (~> 1.6)
 
 DEPENDENCIES:
@@ -11,7 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
-  KFLogFormatter: 8ee5d5a8dc7d676316b2034b0fa7fa70bd3f566e
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  KFLogFormatter: c840dca72f6c760d072f34b3277ce39bfaeac5a0
 
-COCOAPODS: 0.26.2
+COCOAPODS: 0.33.1

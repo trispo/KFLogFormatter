@@ -39,11 +39,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 {
     [self initLogging];
     
+    DDLogDebug(@"Hello World");
     DDLogVerbose(@"Hello World");
     DDLogInfo(@"Hello World");
     DDLogWarn(@"Hello World");
     DDLogError(@"Hello World");
-    
+
     return YES;
 }
 
